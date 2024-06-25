@@ -1,10 +1,3 @@
-# What are Design Patterns ?
+# What are layout components ?
 
-- Design patterns are effective solutions to common application development challenges
-
-# Common Challenges
-
-- Creating reusable layouts
-- Reusing complex logic between multiple components
-- Working with forms
-- Incorporating functional concepts into our code
+- React components that deal primarily with arranging other components on the page
