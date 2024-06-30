@@ -1,51 +1,23 @@
-import { SplitScreen } from "./SplitScreen";
-
-const LeftHandComponent = ({ name }) => {
-  return <h1 style={{ backgroundColor: "green" }}>{name}!</h1>;
-};
-
-const RightHandComponent = ({ message }) => {
-  return <h1 style={{ backgroundColor: "red" }}>{message}!</h1>;
-};
+import { useState } from "react";
+import { ControlledModal } from "./ControlledModal";
+import { UncontrolledModal } from "./UncontrolledModal";
 
 function App() {
+  const [shouldShowModal, setShouldShowModal] = useState(false);
+
   return (
-    <SplitScreen leftWeight={1} rightWeight={3}>
-      <LeftHandComponent name="Cow" />
-      <RightHandComponent message="Duck" />
-    </SplitScreen>
+    <>
+      <ControlledModal
+        shouldShow={shouldShowModal}
+        onRequestClose={() => setShouldShowModal(false)}
+      >
+        <h1>Hello !</h1>
+      </ControlledModal>
+      <button onClick={() => setShouldShowModal(!shouldShowModal)}>
+        {shouldShowModal ? "Hide Modal" : "Show Modal"}
+      </button>
+    </>
   );
 }
-
-// Improvements:
-/**
- * Don't:
-  <SplitScreen
-    left={LeftHandComponent}
-    right={RightHandComponent}
-    leftWeight={1}
-    rightWeight={3}
-  />
-
-  <Container>
-    <Pane weight={leftWeight}>
-      <Left/>
-    </Pane>
-    <Pane weight={rightWeight}>
-      <Right/>
-    </Pane>
-  </Container>
-
-  Do:
-  <SplitScreen leftWeight={1} rightWeight={3}>
-    <LeftHandComponent />
-    <RightHandComponent />
-  </SplitScreen>
-
-  <Container>
-    <Pane weight={leftWeight}>{left}</Pane>
-    <Pane weight={rightWeight}>{right}</Pane>
-  </Container>
- */
 
 export default App;
