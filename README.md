@@ -1,38 +1,15 @@
-# Controlled Components vs Uncontrolled Components
+# What are Higher-Order Components (HOCs) ?
 
-## Uncontrolled Components
-
-Components that keep track of their own states and release data only when some event occurs (that is, the submit event for HTML forms)
-
-```js
-const MyComponent = () => {
-    const [someState, setState] = useState(...);
-
-    return ...;
-}
-
-<MyComponent onSubmit={data => ...}/>
+A component that returns another component instead of JSX
 
 ```
-
-## Controlled Components
-
-Components that do not keep track of their own state-all state is passed in as props (that is, when we use the useState Hook with text inputs)
-
-```js
-const MyComponent = ({
-    data,
-    changeData,
-    onSubmit
-}) => {
-
-    return ...;
-}
-
-<MyComponent
-    data={...}
-    changeData={() => ...}
-    onSubmit={() => ...}
-/>
-
+MyComponent ----> <h1>I'm JSX!</h1>
+HOC ----> Some Component ----> <h1>I'm JSX!</h1>
 ```
+
+- Remember: HOCs are just functions
+
+## Hocs are used for:
+
+- Sharing complex behavior between multiple components (much like with container components)
+- Adding extra functionality to existing components

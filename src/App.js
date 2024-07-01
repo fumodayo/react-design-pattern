@@ -1,7 +1,10 @@
-import { ControlledForm } from "./ControlledForm";
+import { printProps } from "./printProps";
+import { UserInfo } from "./UserInfo";
+
+const UserInfoWrapped = printProps(UserInfo);
 
 function App() {
-  return <ControlledForm />;
+  return <UserInfoWrapped a={1} b="Hello" c={{ name: "fumodayo" }} />;
 }
 
 export default App;
