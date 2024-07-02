@@ -12,6 +12,7 @@ export const withEditableUser = (Component, userId) => {
       //     setOriginalUser(response.data);
       //     setUser(response.data);
       //   })();
+      console.log("path", `/user/${userId}`);
       const sampleData = {
         name: "fumodayo",
         age: 29,
@@ -29,6 +30,7 @@ export const withEditableUser = (Component, userId) => {
       //   const response = await axios.post(`/user/${userId}`, { user });
       //   setOriginalUser(response.data);
       //   setUser(response.data);
+      console.log("path", `/user/${userId}`, "data", { user });
       console.log("User changed successfully", user);
     };
 
