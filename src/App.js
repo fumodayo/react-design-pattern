@@ -1,5 +1,6 @@
 import { RecursiveComponent } from "./RecursiveComponent";
-import { BigSuccessButton, DangerButton } from "./composition";
+import { BigSuccessButton, DangerButton } from "./partiallyApply";
+// import { BigSuccessButton, DangerButton } from "./composition";
 
 const nestedObject = {
   a: 1,
