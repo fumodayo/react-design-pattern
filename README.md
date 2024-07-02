@@ -1,15 +1,16 @@
-# What are Higher-Order Components (HOCs) ?
+# What Is Functional Programming ?
 
-A component that returns another component instead of JSX
+A method of organizing code in a way that:
 
-```
-MyComponent ----> <h1>I'm JSX!</h1>
-HOC ----> Some Component ----> <h1>I'm JSX!</h1>
-```
+1. Minimizes mutation and state change
+2. Keeps functions independent of external data
+3. Treats functions as first-class citizens
 
-- Remember: HOCs are just functions
+# Applications of FP in React
 
-## Hocs are used for:
-
-- Sharing complex behavior between multiple components (much like with container components)
-- Adding extra functionality to existing components
+- Controlled components
+- Function components
+- Higher-order components
+- **Recursive components**
+- **Partially applied components**
+- **Component composition**

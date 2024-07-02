@@ -1,17 +1,31 @@
-import { printProps } from "./printProps";
-import { UserInfo } from "./UserInfo";
-import { UserInfoForm } from "./UserInfoForm";
-import { withUser } from "./withUser";
+import { RecursiveComponent } from "./RecursiveComponent";
 
-// const UserInfoWrapped = printProps(UserInfo);
-// const UserInfoWithLoader = withUser(UserInfo, "12345");
+const nestedObject = {
+  a: 1,
+  b: {
+    b1: 4,
+    b2: {
+      b23: "Hello",
+    },
+    b3: {
+      b31: {
+        message: "Hi",
+      },
+      b32: {
+        message: "Hi",
+      },
+    },
+  },
+  c: {
+    c1: 2,
+    c2: 3,
+  },
+};
 
 function App() {
   return (
     <>
-      {/* <UserInfoWrapped a={1} b="Hello" c={{ name: "fumodayo" }} /> */}
-      {/* <UserInfoWithLoader /> */}
-      <UserInfoForm />
+      <RecursiveComponent data={nestedObject} />
     </>
   );
 }
